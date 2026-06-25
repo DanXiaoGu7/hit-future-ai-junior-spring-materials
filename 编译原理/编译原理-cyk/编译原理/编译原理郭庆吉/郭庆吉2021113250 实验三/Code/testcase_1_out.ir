@@ -1,0 +1,67 @@
+FUNCTION main :
+va := #3
+vb := #4
+t4 := va * va
+t5 := vb * vb
+t3 := t4 + t5
+vc := t3
+WRITE vc
+t14 := va + vc
+t11 := t14 / vb
+vc := t11
+WRITE vc
+t18 := va + vb
+va := t18
+t21 := va - vb
+vb := t21
+t24 := va - vb
+va := t24
+t27 := #0
+t29 := #0
+IF va > vb GOTO label4
+GOTO label5
+LABEL label4 :
+t29 := #1
+LABEL label5 :
+IF t29 != #0 GOTO label1
+GOTO label3
+LABEL label3 :
+t33 := #0
+IF vb <= vc GOTO label6
+GOTO label7
+LABEL label6 :
+t33 := #1
+LABEL label7 :
+IF t33 != #0 GOTO label1
+GOTO label2
+LABEL label1 :
+t27 := #1
+LABEL label2 :
+vc := t27
+t39 := #0
+t42 := #0
+IF vb == vc GOTO label10
+GOTO label11
+LABEL label10 :
+t42 := #1
+LABEL label11 :
+IF t42 < #12 GOTO label8
+GOTO label9
+LABEL label8 :
+t39 := #1
+LABEL label9 :
+t47 := #0
+IF vb >= vc GOTO label12
+GOTO label13
+LABEL label12 :
+t47 := #1
+LABEL label13 :
+t53 := #3 + vb
+t50 := #2 * t53
+t38 := t47 * t50
+t36 := t39 + t38
+vb := t36
+WRITE va
+WRITE vb
+RETURN #0
+WRITE vc

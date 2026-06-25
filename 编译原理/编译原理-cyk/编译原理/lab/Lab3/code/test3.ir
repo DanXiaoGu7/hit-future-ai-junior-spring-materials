@@ -1,0 +1,38 @@
+FUNCTION main :
+vdigits := #0
+vcounter := #0
+READ t3
+vn := t3
+LABEL label1 :
+IF vn > #0 GOTO label2
+GOTO label3
+LABEL label2 :
+t11 := vn / #10
+t8 := t11 * #10
+t6 := vn - t8
+vremain := t6
+t14 := vn / #10
+vn := t14
+t18 := vdigits + #1
+vdigits := t18
+vm := vdigits
+LABEL label4 :
+IF vm > #0 GOTO label7
+GOTO label1
+LABEL label7 :
+IF vremain > #0 GOTO label5
+GOTO label1
+LABEL label5 :
+t27 := vm * vremain
+t25 := vcounter + t27
+vcounter := t25
+t30 := vm - #1
+vm := t30
+t33 := vremain - #1
+vremain := t33
+GOTO label4
+GOTO label1
+LABEL label3 :
+WRITE vdigits
+WRITE vcounter
+RETURN #0

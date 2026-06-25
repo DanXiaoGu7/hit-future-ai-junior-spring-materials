@@ -1,0 +1,11 @@
+boto3
+botocore
+filelock
+matplotlib
+numpy
+pandas
+requests
+scikit-learn
+scipy
+seqeval
+tqdm

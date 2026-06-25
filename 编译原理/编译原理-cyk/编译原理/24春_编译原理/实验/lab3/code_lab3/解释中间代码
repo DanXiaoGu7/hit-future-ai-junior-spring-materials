@@ -1,0 +1,61 @@
+// 代码具体如何翻译出中间代码
+//三地址码的生成过程
+
+### 在 .h 文件中的定义
+操作数结构体以及中间代码结构体。前者的作用是保存每个操作数的类型和数值，用来完成中间代码的转换；后者的作用是保存生成的中间代码方便输出
+
+- **`Operand` 和 `InterCode` 结构**：这些结构用于表示操作数（如变量、常量、标签）和中间代码指令（如赋值、条件跳转）。这些结构支持多种类型的操作和指令，是实现递归和条件逻辑的基础。
+
+### 在 .c 文件中的实现
+在你的 `.c` 文件中，具体的逻辑处理和中间代码生成是通过各种翻译函数实现的。下面根据你的描述，我将解释这些功能的具体实现：
+
+1. **参数接收 (`PARAM`) 和 实参传递 (`ARG`)**：
+   - **`PARAM`**：在函数开始时接收传入的参数。这通常在`translate_FunDec`函数中处理，其中会检查函数定义，并为每个形式参数生成`PARAM`类型的中间代码。
+   - **`ARG`**：在调用函数之前，为每个实参生成`ARG`类型的中间代码。这通常在表达式或函数调用的翻译函数`translate_Exp`中处理，当发现函数调用时，为每个传递给函数的参数生成`ARG`。
+
+2. **条件跳转 (`IF`, `GOTO`, `LABEL`)**：
+   - **`IF`**：在`translate_Cond`函数中处理，用于生成条件跳转的中间代码。这个函数分析条件表达式，并根据条件是否满足来生成跳转到不同标签的代码。
+   - **`GOTO`**：通常在需要无条件跳转时使用，比如在完成一部分逻辑后跳过其他部分。
+   - **`LABEL`**：用于标记代码中的位置，以便`GOTO`或条件跳转`IF`可以跳到这些位置。
+
+3. **递归调用 (`CALL`)**：
+   - 在处理函数调用时（如在`translate_Exp`中发现函数调用表达式），会生成`CALL`类型的中间代码。如果调用是递归的（如函数自己调用自己），该逻辑同样适用。
+
+### 代码段
+
+// 处理函数定义和参数
+void translate_FunDec(Treenode now) {
+    // 创建函数开始的LABEL
+    create_intercode(IFUNCTION, ..., now->name);
+    // 处理每个参数
+    for (每个参数) {
+        create_operand(PARAM, ..., 参数信息);
+        create_intercode(PARAM, ..., 创建的Operand);
+    }
+}
+
+// 生成条件和跳转代码
+void translate_Cond(Treenode now, Operand trueLabel, Operand falseLabel) {
+    if (是比较表达式) {
+        Operand left = 处理表达式左侧;
+        Operand right = 处理表达式右侧;
+        create_intercode(IF, ..., left, right, trueLabel);
+        create_intercode(GOTO, ..., falseLabel);
+    }
+}
+
+// 函数调用和实参处理
+void translate_Exp(Treenode now) {
+    if (是函数调用) {
+        for (每个实参) {
+            create_operand(ARG, ..., 实参信息);
+            create_intercode(ARG, ..., 创建的Operand);
+        }
+        Operand result = create_operand(...);
+        create_intercode(CALL, ..., result, 函数名);
+    }
+}
+
+
+全部的语法单元以及基本表达式等内容均对应了一个翻译函数。
+在定义操作的时候先定义一个操作数，然后赋予字段值。然后我们调用中间代码生成函数来生成中间代码，并将其进行存储，利用上文中提到的结构体。然后在最后进行统一输出即可。

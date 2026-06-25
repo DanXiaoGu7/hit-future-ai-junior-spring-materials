@@ -1,0 +1,61 @@
+FUNCTION main :
+vi := #0
+vj := #0
+vmax := #0
+vmin := #1000000
+vmin_index := #0
+vmax_index := #0
+DEC va 80
+LABEL label1 :
+IF vi < #20 GOTO label2
+GOTO label3
+LABEL label2 :
+t11 := vi * #4
+t12 := &va + t11
+t16 := vj * #-1
+t21 := vj * vj
+t17 := t21 / #100
+t14 := t16 + t17
+t13 := t14 - #19
+*t12 := t13
+t28 := vi * #4
+t29 := &va + t28
+vj := *t29
+t30 := vi + #1
+vi := t30
+GOTO label1
+LABEL label3 :
+vi := #0
+LABEL label4 :
+IF vi < #20 GOTO label5
+GOTO label6
+LABEL label5 :
+t40 := vi * #4
+t41 := &va + t40
+IF *t41 < vmin GOTO label7
+GOTO label8
+LABEL label7 :
+t45 := vi * #4
+t46 := &va + t45
+vmin := *t46
+vmin_index := vi
+LABEL label8 :
+t52 := vi * #4
+t53 := &va + t52
+IF *t53 > vmax GOTO label9
+GOTO label10
+LABEL label9 :
+t57 := vi * #4
+t58 := &va + t57
+vmax := *t58
+vmax_index := vi
+LABEL label10 :
+t60 := vi + #1
+vi := t60
+GOTO label4
+LABEL label6 :
+WRITE vmin_index
+WRITE vmin
+WRITE vmax_index
+WRITE vmax
+RETURN #0

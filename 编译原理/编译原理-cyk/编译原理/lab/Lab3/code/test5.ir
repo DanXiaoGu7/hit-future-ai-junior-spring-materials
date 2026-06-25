@@ -1,0 +1,81 @@
+FUNCTION multiTest :
+PARAM va1
+PARAM va2
+PARAM va3
+PARAM va4
+IF va1 > va2 GOTO label6
+GOTO label4
+LABEL label6 :
+IF va2 > va3 GOTO label5
+GOTO label4
+LABEL label5 :
+IF va3 > va4 GOTO label1
+GOTO label4
+LABEL label4 :
+IF va4 > va1 GOTO label1
+t15 := va3 / va4
+t12 := va2 * t15
+t10 := va1 + t12
+RETURN t10
+GOTO label3
+LABEL label1 :
+RETURN #1
+LABEL label3 :
+FUNCTION f :
+PARAM vn
+IF vn == #1 GOTO label7
+GOTO label8
+LABEL label7 :
+ARG #4
+ARG #3
+ARG #2
+ARG #1
+t21 := CALL multiTest
+RETURN t21
+LABEL label8 :
+t31 := vn - #1
+ARG t31
+t29 := CALL f
+t30 := vn * #2
+t27 := t29 + t30
+t26 := t27 + #1
+RETURN t26
+FUNCTION f2 :
+PARAM vm
+IF vm == #1 GOTO label9
+t43 := vm - #1
+ARG t43
+t41 := CALL f
+t48 := vm - #2
+ARG t48
+t47 := CALL f
+t42 := #2 * t47
+t39 := t41 + t42
+t38 := t39 - #1
+RETURN t38
+GOTO label11
+LABEL label9 :
+ARG #1
+ARG #2
+ARG #3
+ARG #4
+t51 := CALL multiTest
+RETURN t51
+LABEL label11 :
+FUNCTION main :
+READ t56
+vk := t56
+IF vk <= #0 GOTO label12
+ARG vk
+t59 := CALL f2
+WRITE t59
+GOTO label14
+LABEL label12 :
+ARG #1
+ARG #3
+ARG #1
+ARG #2
+t61 := CALL multiTest
+WRITE t61
+LABEL label14 :
+RETURN #0

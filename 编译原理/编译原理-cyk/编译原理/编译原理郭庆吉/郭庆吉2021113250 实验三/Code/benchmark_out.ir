@@ -1,0 +1,146 @@
+FUNCTION main :
+va := #3
+vb := #4
+vi := #0
+vsum := #0
+DEC varray 600
+t5 := va * va
+vd := t5
+t8 := vb * vb
+ve := t8
+IF #-1 != #0 GOTO label1
+GOTO label3
+LABEL label3 :
+t13 := vd + ve
+IF t13 > #0 GOTO label1
+GOTO label2
+LABEL label1 :
+t23 := va * va
+t24 := vb * vb
+t21 := t23 - t24
+t22 := vd * ve
+t20 := t21 + t22
+t31 := va - #8
+t17 := t20 / t31
+vi := t17
+LABEL label2 :
+t42 := va * #3
+t39 := #7 - t42
+t40 := #4 * vb
+t37 := t39 - t40
+t38 := vd * ve
+t36 := t37 + t38
+t34 := #0 - t36
+vc := t34
+t58 := vc - vc
+vi := t58
+LABEL label4 :
+IF vi < #150 GOTO label5
+GOTO label6
+LABEL label5 :
+t67 := vi * #4
+t68 := &varray + t67
+*t68 := #1
+t70 := vi + #1
+vi := t70
+GOTO label4
+LABEL label6 :
+t83 := &varray + #0
+t76 := *t83 + vd
+t74 := t76 - #1
+t73 := t74 - vd
+vi := t73
+LABEL label7 :
+t93 := vb * vb
+t90 := vc - t93
+t91 := va * va
+t89 := t90 + t91
+t85 := #0 - t89
+IF vi < t85 GOTO label8
+GOTO label9
+LABEL label8 :
+t99 := va + #4
+t98 := t99 - vb
+vk := t98
+vj := vd
+t104 := vk - #1
+vl := t104
+LABEL label10 :
+t111 := va + vb
+t109 := t111 - #10
+t108 := t109 + #3
+IF vj > t108 GOTO label11
+GOTO label12
+LABEL label11 :
+vf := #0
+t117 := vi / #10
+t118 := t117 * #4
+t121 := &varray + t118
+t126 := vi / #10
+t127 := t126 * #4
+t130 := &varray + t127
+t131 := vj * #3
+t122 := *t130 + t131
+*t121 := t122
+IF vl == #2 GOTO label13
+GOTO label14
+LABEL label13 :
+t137 := vi / #10
+t138 := t137 * #4
+t141 := &varray + t138
+t146 := vi / #10
+t147 := t146 * #4
+t150 := &varray + t147
+t153 := vj * #3
+t151 := #2 + t153
+t142 := *t150 - t151
+*t141 := t142
+LABEL label14 :
+IF vi > #100 GOTO label15
+t159 := vi / #10
+t160 := t159 * #4
+t163 := &varray + t160
+t168 := vi / #10
+t169 := t168 * #4
+t172 := &varray + t169
+t164 := *t172 + vj
+*t163 := t164
+GOTO label17
+LABEL label15 :
+t174 := vj / #2
+t173 := t174 - #1
+vf := t173
+LABEL label17 :
+t178 := vf - #1
+vf := t178
+t182 := vj / #2
+t181 := t182 - #1
+vj := t181
+GOTO label10
+LABEL label12 :
+t186 := vb + vsum
+IF t186 < vd GOTO label18
+GOTO label20
+LABEL label20 :
+IF ve != #0 GOTO label18
+GOTO label7
+LABEL label18 :
+t191 := vi + #1
+vi := t191
+GOTO label7
+LABEL label9 :
+vi := #0
+LABEL label21 :
+IF vi < #150 GOTO label22
+GOTO label23
+LABEL label22 :
+t202 := vi * #4
+t203 := &varray + t202
+t197 := vsum + *t203
+vsum := t197
+t204 := vi + #1
+vi := t204
+GOTO label21
+LABEL label23 :
+WRITE vsum
+RETURN #0

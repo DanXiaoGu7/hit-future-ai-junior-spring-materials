@@ -1,0 +1,11 @@
+{
+  "base_model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+  "aligned_model_path": "outputs/ppo/final_policy",
+  "prompts_file": "data/eval_prompts.jsonl",
+  "output_dir": "outputs/eval",
+  "max_new_tokens": 256,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "seed": 42,
+  "fp16": true
+}

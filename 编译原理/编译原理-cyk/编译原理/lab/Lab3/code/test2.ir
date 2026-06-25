@@ -1,0 +1,49 @@
+FUNCTION main :
+READ t1
+vvalue := t1
+IF vvalue < #2500 GOTO label1
+IF vvalue < #6250 GOTO label7
+GOTO label5
+LABEL label7 :
+IF vvalue >= #2500 GOTO label4
+GOTO label5
+LABEL label4 :
+t11 := vvalue * #66
+t10 := t11 / #10000
+t8 := #56 + t10
+vcommission := t8
+GOTO label3
+LABEL label5 :
+IF vvalue < #20000 GOTO label8
+t20 := vvalue * #22
+t19 := t20 / #10000
+t17 := #100 + t19
+vcommission := t17
+GOTO label3
+LABEL label8 :
+t27 := vvalue * #34
+t26 := t27 / #10000
+t24 := #76 + t26
+vcommission := t24
+GOTO label3
+LABEL label1 :
+t34 := vvalue * #17
+t33 := t34 / #1000
+t31 := #30 + t33
+vcommission := t31
+LABEL label3 :
+IF vcommission < #39 GOTO label11
+GOTO label12
+LABEL label11 :
+vcommission := #39
+LABEL label12 :
+IF vcommission < vvalue GOTO label15
+GOTO label14
+LABEL label15 :
+t43 := vvalue / #5
+IF t43 != #0 GOTO label13
+GOTO label14
+LABEL label13 :
+WRITE vcommission
+LABEL label14 :
+RETURN #0

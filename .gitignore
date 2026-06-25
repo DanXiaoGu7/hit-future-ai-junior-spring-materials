@@ -1,0 +1,51 @@
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build and compiled artifacts
+build/
+cmake-build-*/
+CMakeFiles/
+*.o
+*.obj
+*.exe
+*.dll
+*.lib
+*.a
+
+# Experiment outputs and checkpoints
+outputs/
+outputs_*/
+output/
+results/
+ckpt/
+checkpoint/
+checkpoints/
+checkpoint-*/
+runs/
+cache/
+.cache/
+
+# Model and tensor artifacts
+*.safetensors
+*.pt
+*.pth
+*.pth.tar
+*.bin
+*.arrow
+
+# Downloaded datasets and packaged submissions
+*.zip
+*.rar
+*.tar
+*.tar.gz
+*.gz
+
+# Nested repository metadata from copied reference projects
+**/.git/

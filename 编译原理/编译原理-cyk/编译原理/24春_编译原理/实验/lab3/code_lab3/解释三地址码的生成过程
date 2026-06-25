@@ -1,0 +1,59 @@
+// 解释中间代码
+
+int fact(int n)
+{
+	if (n == 1)
+	    return n;
+	else
+	    return (n * fact(n - 1));
+}
+int main()
+{
+	int m, result;
+	m = read();
+	if (m > 1)
+	    result = fact(m);
+	else
+	    result = 1;
+	write(result);
+	return 0;
+}
+
+
+// 这部分的中间代码定义了阶乘函数fact，递归地计算给定整数的阶乘。
+
+FUNCTION fact :
+PARAM t1                  // 接收参数t1，这是阶乘函数的输入
+IF t1 == #1 GOTO label1   // 如果t1等于1，则直接跳转到label1，此处实现递归的基本情况
+GOTO label2               // 否则，跳转到label2，进行递归计算
+LABEL label1 :
+RETURN t1                 // 如果t1等于1，返回t1，即1的阶乘是1
+GOTO label3               // 跳转到函数末尾，结束函数
+LABEL label2 :
+t10 := t1 - #1            // t10为t1减1，为下一次递归调用准备参数
+ARG t10                   // 将t10作为实参传递给下一次递归调用
+t9 := CALL fact           // 调用fact函数，计算t10的阶乘，结果存储在t9
+t7 := t1 * t9             // 将t1与t9相乘，得到t1的阶乘
+RETURN t7                 // 返回计算结果t7
+LABEL label3 :            // 函数结束标签
+
+// 这部分的中间代码定义了主函数，它读取一个整数并使用fact函数计算其阶乘。
+
+FUNCTION main :
+READ t15                  // 从标准输入读取一个整数，存入t15
+t2 := t15                 // 将读取的值赋给t2
+
+IF t2 > #1 GOTO label4    // 如果t2大于1，跳转到label4进行阶乘计算
+GOTO label5               // 否则，跳转到label5，直接将结果设置为1
+LABEL label4 :
+ARG t2                    // 将t2作为实参传递给fact函数
+t18 := CALL fact          // 调用fact函数计算t2的阶乘，结果存储在t18
+t3 := t18                 // 将结果赋值给t3
+
+GOTO label6               // 跳转到label6，继续执行
+LABEL label5 :
+t3 := #1                  // 如果t2不大于1（即t2为1或0），阶乘结果为1
+
+LABEL label6 :
+WRITE t3                  // 将结果t3输出到标准输出
+RETURN #0                 // 函数返回0，结束主函数

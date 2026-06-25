@@ -1,0 +1,79 @@
+FUNCTION sort :
+PARAM vn
+vi := #0
+vj := #0
+DEC va 400
+LABEL label1 :
+IF vi < vn GOTO label2
+GOTO label3
+LABEL label2 :
+t7 := vi * #4
+t8 := &va + t7
+t11 := vi * #2
+t9 := #100 - t11
+*t8 := t9
+t14 := vi + #1
+vi := t14
+GOTO label1
+LABEL label3 :
+vi := #0
+LABEL label4 :
+IF vi < vn GOTO label5
+GOTO label6
+LABEL label5 :
+vj := #0
+LABEL label7 :
+IF vj < vi GOTO label8
+GOTO label9
+LABEL label8 :
+t27 := vi * #4
+t28 := &va + t27
+t31 := vj * #4
+t32 := &va + t31
+IF *t28 < *t32 GOTO label10
+GOTO label11
+LABEL label10 :
+t36 := vi * #4
+t37 := &va + t36
+vt := *t37
+t40 := vi * #4
+t41 := &va + t40
+t45 := vj * #4
+t46 := &va + t45
+*t41 := *t46
+t49 := vj * #4
+t50 := &va + t49
+*t50 := vt
+LABEL label11 :
+t52 := vj + #1
+vj := t52
+GOTO label7
+LABEL label9 :
+t55 := vi + #1
+vi := t55
+GOTO label4
+LABEL label6 :
+vi := #0
+LABEL label12 :
+IF vi < vn GOTO label13
+GOTO label14
+LABEL label13 :
+t64 := vi * #4
+t65 := &va + t64
+WRITE *t65
+t66 := vi + #1
+vi := t66
+GOTO label12
+LABEL label14 :
+RETURN #0
+FUNCTION main :
+READ t70
+vm := t70
+IF vm >= #100 GOTO label15
+ARG vm
+null := CALL sort
+GOTO label17
+LABEL label15 :
+WRITE #-1
+LABEL label17 :
+RETURN #0

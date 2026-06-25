@@ -1,0 +1,73 @@
+
+Invalid rows/total: 0/8000
+
+Invalid rows/total: 0/2717
+[FROZE]: embeddings.word_embeddings.weight
+[FROZE]: embeddings.position_embeddings.weight
+[FROZE]: embeddings.token_type_embeddings.weight
+[FROZE]: embeddings.LayerNorm.weight
+[FROZE]: embeddings.LayerNorm.bias
+[FROZE]: encoder.embedding_hidden_mapping_in.weight
+[FROZE]: encoder.embedding_hidden_mapping_in.bias
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.full_layer_layer_norm.weight
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.full_layer_layer_norm.bias
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.query.weight
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.query.bias
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.key.weight
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.key.bias
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.value.weight
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.value.bias
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.dense.weight
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.dense.bias
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.LayerNorm.weight
+[FROZE]: encoder.albert_layer_groups.0.albert_layers.0.attention.LayerNorm.bias
+[FREE]: encoder.albert_layer_groups.0.albert_layers.0.ffn.weight
+[FREE]: encoder.albert_layer_groups.0.albert_layers.0.ffn.bias
+[FREE]: encoder.albert_layer_groups.0.albert_layers.0.ffn_output.weight
+[FREE]: encoder.albert_layer_groups.0.albert_layers.0.ffn_output.bias
+[FREE]: pooler.weight
+[FREE]: pooler.bias
+[FREE]: classification_layer.weight
+[FREE]: classification_layer.bias
+[Epoch: 1,   800/ 8000 points] total loss, accuracy per batch: 2.676, 0.181
+[Epoch: 1,  1600/ 8000 points] total loss, accuracy per batch: 2.208, 0.338
+[Epoch: 1,  2400/ 8000 points] total loss, accuracy per batch: 1.741, 0.420
+[Epoch: 1,  3200/ 8000 points] total loss, accuracy per batch: 1.492, 0.529
+[Epoch: 1,  4000/ 8000 points] total loss, accuracy per batch: 1.159, 0.636
+[Epoch: 1,  4800/ 8000 points] total loss, accuracy per batch: 1.052, 0.689
+[Epoch: 1,  5600/ 8000 points] total loss, accuracy per batch: 1.060, 0.675
+[Epoch: 1,  6400/ 8000 points] total loss, accuracy per batch: 0.831, 0.734
+[Epoch: 1,  7200/ 8000 points] total loss, accuracy per batch: 0.834, 0.744
+[Epoch: 1,  8000/ 8000 points] total loss, accuracy per batch: 0.792, 0.765
+Epoch finished, took 131.91 seconds.
+Losses at Epoch 1: 1.3844648
+Train accuracy at Epoch 1: 0.5710000
+Test f1 at Epoch 1: 0.6809981
+[Epoch: 2,   800/ 8000 points] total loss, accuracy per batch: 0.747, 0.764
+[Epoch: 2,  1600/ 8000 points] total loss, accuracy per batch: 0.769, 0.762
+[Epoch: 2,  2400/ 8000 points] total loss, accuracy per batch: 0.792, 0.754
+[Epoch: 2,  3200/ 8000 points] total loss, accuracy per batch: 0.766, 0.741
+[Epoch: 2,  4000/ 8000 points] total loss, accuracy per batch: 0.764, 0.757
+[Epoch: 2,  4800/ 8000 points] total loss, accuracy per batch: 0.706, 0.777
+[Epoch: 2,  5600/ 8000 points] total loss, accuracy per batch: 0.657, 0.802
+[Epoch: 2,  6400/ 8000 points] total loss, accuracy per batch: 0.611, 0.809
+[Epoch: 2,  7200/ 8000 points] total loss, accuracy per batch: 0.715, 0.770
+[Epoch: 2,  8000/ 8000 points] total loss, accuracy per batch: 0.613, 0.812
+Epoch finished, took 117.63 seconds.
+Losses at Epoch 2: 0.7139589
+Train accuracy at Epoch 2: 0.7750000
+Test f1 at Epoch 2: 0.7274162
+[Epoch: 3,   800/ 8000 points] total loss, accuracy per batch: 0.523, 0.848
+[Epoch: 3,  1600/ 8000 points] total loss, accuracy per batch: 0.483, 0.860
+[Epoch: 3,  2400/ 8000 points] total loss, accuracy per batch: 0.485, 0.853
+[Epoch: 3,  3200/ 8000 points] total loss, accuracy per batch: 0.533, 0.829
+[Epoch: 3,  4000/ 8000 points] total loss, accuracy per batch: 0.548, 0.840
+[Epoch: 3,  4800/ 8000 points] total loss, accuracy per batch: 0.462, 0.848
+[Epoch: 3,  5600/ 8000 points] total loss, accuracy per batch: 0.550, 0.812
+[Epoch: 3,  6400/ 8000 points] total loss, accuracy per batch: 0.500, 0.841
+[Epoch: 3,  7200/ 8000 points] total loss, accuracy per batch: 0.468, 0.849
+[Epoch: 3,  8000/ 8000 points] total loss, accuracy per batch: 0.498, 0.839
+Epoch finished, took 121.63 seconds.
+Losses at Epoch 3: 0.5050405
+Train accuracy at Epoch 3: 0.8417500
+Test f1 at Epoch 3: 0.7421332

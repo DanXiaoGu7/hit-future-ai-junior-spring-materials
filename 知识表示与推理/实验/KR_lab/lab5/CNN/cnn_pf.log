@@ -1,0 +1,75 @@
+--------------------------------------
+some config:
+data_dir = ./data
+output_dir = ./output
+embedding_path = ./embedding/hlbl-embeddings-scaled.EMBEDDING_SIZE=50.txt
+word_dim = 50
+model_name = CNN_pf
+mode = 1
+seed = 5782
+cuda = 0
+epoch = 20
+dropout = 0.5
+batch_size = 128
+num_workers = 0
+lr = 0.001
+max_len = 100
+pos_dis = 50
+pos_dim = 5
+use_pf = 1
+hidden_size = 100
+filter_num = 200
+window = 3
+L2_decay = 1e-05
+device = cuda:0
+model_dir = ./output\CNN_pf
+--------------------------------------
+start to load data ...
+finish!
+--------------------------------------
+CNN(
+  (word_embedding): Embedding(246123, 50)
+  (pos1_embedding): Embedding(103, 5)
+  (pos2_embedding): Embedding(103, 5)
+  (conv): Conv2d(1, 200, kernel_size=(3, 60), stride=(1, 1), padding=(1, 0))
+  (maxpool): MaxPool2d(kernel_size=(100, 1), stride=(100, 1), padding=0, dilation=1, ceil_mode=False)
+  (tanh): Tanh()
+  (dropout): Dropout(p=0.5, inplace=False)
+  (linear): Linear(in_features=200, out_features=100, bias=True)
+  (dense): Linear(in_features=100, out_features=19, bias=True)
+)
+traning model parameters:
+word_embedding.weight :  torch.Size([246123, 50])
+pos1_embedding.weight :  torch.Size([103, 5])
+pos2_embedding.weight :  torch.Size([103, 5])
+conv.weight :  torch.Size([200, 1, 3, 60])
+conv.bias :  torch.Size([200])
+linear.weight :  torch.Size([100, 200])
+linear.bias :  torch.Size([100])
+dense.weight :  torch.Size([19, 100])
+dense.bias :  torch.Size([19])
+--------------------------------------
+start to train the model ...
+[001] train_loss: 2.185 | dev_loss: 2.189 | micro f1 on dev: 0.5231 >>> save models!
+[002] train_loss: 1.451 | dev_loss: 1.494 | micro f1 on dev: 0.5501 >>> save models!
+[003] train_loss: 1.000 | dev_loss: 1.173 | micro f1 on dev: 0.6829 >>> save models!
+[004] train_loss: 0.686 | dev_loss: 1.016 | micro f1 on dev: 0.7410 >>> save models!
+[005] train_loss: 0.449 | dev_loss: 0.958 | micro f1 on dev: 0.7436 >>> save models!
+[006] train_loss: 0.282 | dev_loss: 0.942 | micro f1 on dev: 0.7665 >>> save models!
+[007] train_loss: 0.175 | dev_loss: 0.979 | micro f1 on dev: 0.7467 
+[008] train_loss: 0.100 | dev_loss: 1.017 | micro f1 on dev: 0.7669 >>> save models!
+[009] train_loss: 0.060 | dev_loss: 1.051 | micro f1 on dev: 0.7667 
+[010] train_loss: 0.039 | dev_loss: 1.104 | micro f1 on dev: 0.7487 
+[011] train_loss: 0.025 | dev_loss: 1.137 | micro f1 on dev: 0.7598 
+[012] train_loss: 0.017 | dev_loss: 1.186 | micro f1 on dev: 0.7629 
+[013] train_loss: 0.013 | dev_loss: 1.228 | micro f1 on dev: 0.7633 
+[014] train_loss: 0.010 | dev_loss: 1.263 | micro f1 on dev: 0.7602 
+[015] train_loss: 0.007 | dev_loss: 1.289 | micro f1 on dev: 0.7630 
+[016] train_loss: 0.006 | dev_loss: 1.328 | micro f1 on dev: 0.7597 
+[017] train_loss: 0.005 | dev_loss: 1.336 | micro f1 on dev: 0.7624 
+[018] train_loss: 0.004 | dev_loss: 1.363 | micro f1 on dev: 0.7567 
+[019] train_loss: 0.003 | dev_loss: 1.382 | micro f1 on dev: 0.7578 
+[020] train_loss: 0.003 | dev_loss: 1.392 | micro f1 on dev: 0.7600 
+--------------------------------------
+start test ...
+test_loss: 1.017 | micro f1 on test:  0.7669

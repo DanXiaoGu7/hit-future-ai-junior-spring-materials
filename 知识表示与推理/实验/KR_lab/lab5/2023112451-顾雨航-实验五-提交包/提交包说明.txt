@@ -1,0 +1,18 @@
+实验五提交包说明
+
+报告文件：
+- 2023112451-顾雨航-实验五.docx
+
+代码文件：
+- code/CNN/model.py
+  对应指导书要求提交的 CNN 关系抽取模型文件。
+
+- code/BERT-Relation-Extraction/src/model/ALBERT/modeling_albert.py
+  对应指导书要求提交的 ALBERT 模型修改文件。
+
+附加代码文件：
+- code/CNN/config.py
+  CNN 消融实验中增加了 --use_pf 参数，model.py 依赖该配置项，因此一并提交。
+
+说明：
+- OpenNRE 远程监督关系抽取部分指导书只要求在报告中给出 cnn+att 和 cnn+avg 的 AUC/F1，本包未提交大型数据集、预训练向量、checkpoint 和缓存文件。

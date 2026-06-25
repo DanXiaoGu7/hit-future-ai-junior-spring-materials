@@ -1,0 +1,9 @@
+{
+  "dataset_name": "Anthropic/hh-rlhf",
+  "dataset_split": "train",
+  "max_rm_train_samples": 4000,
+  "max_rm_eval_samples": 400,
+  "max_ppo_prompts": 800,
+  "seed": 42,
+  "output_dir": "data/processed"
+}
